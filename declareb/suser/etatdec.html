@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Etat Déclaration</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="suserhis.css">
+  </head>
+  <body>
+    <style>
+        .closebtn { background-color: #d8d3d3; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+      .btnc {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+     .btnr {
+  background-color: #e01919; 
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+        
+    </style>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined"></span> Espace Super-User
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="nav nav-stacked" id="accordion">
+				
+            <li class="panel noborder"> <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="dashboard.html">Dashboard</a>
+
+                <ul id="firstCategory" class="collapse nav nav-stacked color-background-light">
+                    <li><a href="">Option one</a></li>
+                    <li><a href="#">Option two</a></li>
+                    <li><a href="#">Option three</a></li>
+                </ul>
+            </li>
+            <li class="panel noborder"> <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="etatdec.html">Etat Déclaration</a>
+
+                <ul id="secondCategory" class="collapse nav nav-stacked color-background-light">
+                    <li><a href="#">Option one</a></li>
+                    <li><a href="#">Option two</a></li>
+                    <li><a href="#">Option three</a></li>
+                </ul>
+            </li>
+            <li class="panel noborder"> <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="historique.html">Historique</a>
+
+              <ul id="firstCategory" class="collapse nav nav-stacked color-background-light">
+                  <li><a href="">Option one</a></li>
+                  <li><a href="#">Option two</a></li>
+                  <li><a href="#">Option three</a></li>
+              </ul>
+          </li>
+    
+            <br/>
+            <br/>
+    
+            <li class="panel noborder"> <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="Listemplye.html">Paramètre Compte</a>
+
+                <ul id="forthCategory" class="collapse nav nav-stacked color-background-light">
+                    <li><a href="#">Option one</a></li>
+                    <li><a href="#">Option two</a></li>
+                    <li><a href="#">Option three</a></li>
+                </ul>
+            </li>
+    
+        </ul>
+    
+      </aside>
+      <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">ETAT DECLARATION</p>
+        </div>
+        <div class="page-wrapper mdc-toolbar-fixed-adjust">
+          <main class="content-wrapper">
+              <div class="mdc-layout-grid">
+                  <div class="mdc-layout-grid__inner">
+                      <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+                          <div class="mdc-card p-0">
+                            <h6></h6>
+                            
+                            
+                            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                              <div class="table-responsive">
+                                  <table class="table table-hoverable" id="myTable">
+                                      <thead>
+                                      <tr>
+                                          <th class="text-left">REF(CIE)</th>
+                                          <th>Repère TOPO</th>
+                                          <th>Reference Article</th>
+                                          <th>Quantité</th>
+                                          <th>Type De Défaut</th>
+                                          <th>Cause Du Défaut</th>
+                                          <th>TRI</th>
+                                          <th></th>
+                                          <th></th>
+                                      </tr>
+                                      </thead>
+                                      
+                                      <tbody>
+                                      <tr>
+                                          <td class="text-left">Importer du bd</td>
+                                          <td>BD</td>
+                                          <td>BD</td>
+                                          <td>BD</td>
+                                          <td>BD</td>
+                                          <td>BD</td>
+                                          <td>BD</td>
+                                          <td>
+                                            <button id="rejeter" class="btnr">Rejeter</button>
+                                          </td>
+                                          <td>
+                                            <button class="btnc" id="confirmer">Confirmer</button>
+
+                                          </td>
+                                        
+                                      </tr>
+                                     
+                                    </tbody>  
+                                
+                                  </table>
+                                 
+                              </div>
+                              
+                          </div>
+                         
+                      </div>
+                    
+                    </div>
+                  
+              </div>
+          </main>
+      </div>
+  </main>
+  <!-- End Main -->
+
+  
+  <!-- Pop-up Modal -->
+  <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>FICHE DE TRAITEMENT DES REBUTS</p>
+          <table class="table table-hoverable" id="myTable">
+            <thead>
+              <tr>
+                <th>Unité De Fab: BDS</th>
+                <th>Atlier : Intégration</th>
+              </tr>
+              <tr>
+                <th class="text-left">Date:</th><td class="text-left">00-00-0000</td>
+                <th>Heure:</th><td>00:00</td>
+                <th>Emetteur:</th><td>AAA</td>
+              </tr>
+            <tr>
+                <th class="text-left">REF(CIE)</th>
+                <th>Repère TOPO</th>
+                <th>Reference Article</th>
+                <th>Quantité</th>
+                <th>Type De Défaut</th>
+                <th>Cause Du Défaut</th>
+                <th>TRI</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-left">Importer du bd</td>
+                <td>BD</td>
+                <td>BD</td>
+                <td>BD</td>
+                <td>BD</td>
+                <td>BD</td>
+                <td>BD</td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    </div>
+    
+    <div id="popupC" class="popup">
+      <h5>Voulez-vous Confirmer Cette Déclaration </h5>
+      <button onclick="closePopupC()" class="closebtn">Annuler</button>
+      <button onclick="closePopupC()" class="closebtn">Confirmer</button>
+  
+    </div>
+    <div id="popupS" class="popup">
+      <h5>Voulez-vous Supprimer Cette Déclaration </h5>
+      <button onclick="closePopupS()" class="closebtn">Annuler</button>
+      <button onclick="closePopupS()" class="closebtn">Supprimer</button>
+  
+    </div>
+  
+    <script>
+      // Function to display the popup
+      function showPopupC() {
+        document.getElementById('popupC').style.display = 'block';
+      }
+      function showPopupS() {
+        document.getElementById('popupS').style.display = 'block';
+      }
+  
+      // Function to close the popup
+      function closePopupC() {
+        document.getElementById('popupC').style.display = 'none';
+      }
+      function closePopupS() {
+        document.getElementById('popupS').style.display = 'none';
+      }
+  
+      // Event listener for clicking on the "oui" image
+      document.getElementById('confirmer').addEventListener('click', showPopupC);
+      document.getElementById('rejeter').addEventListener('click', showPopupS);
+  
+    </script>
+
+<!-- Scripts -->
+<!-- ApexCharts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+<!-- Custom JS -->
+<script src="suser.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+</body>
+</html>
